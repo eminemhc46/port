@@ -411,3 +411,11 @@ form label{
     cursor: pointer;
     font-size: 13px;
 }
+
+.copyright {
+    margin-top: 5vh;
+    text-align: center;
+}
+.e-tab{
+    width: auto !important;
+}

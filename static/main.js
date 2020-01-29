@@ -1,4 +1,23 @@
   jQuery(document).ready(function(){ 
+
+	$('.e-tab > a').click(function(){
+		$('.tab-profile').removeClass('active');
+		$(this).addClass('active');
+		
+		var content_id = this.text.toLowerCase().trim();
+		$('.tab-content').each(function(){
+			if(this.id != content_id){
+				$(this).attr('style','display:none');
+			}
+		});
+		$('#'+content_id).fadeIn(1000,function(){
+			if(content_id == 'resume'){
+				$('.setting-icon').removeClass('invisible');
+			}else{
+				$('.setting-icon').addClass('invisible');
+			}
+		});
+	});
 	
 	/* ---------------------------------------------------------------------- */
 	/*	Custom Functions
@@ -99,7 +118,7 @@
 	var $content 		= $("#content");
 	
 	// Run easytabs
-  	$content.easytabs({
+  	/*$content.easytabs({
 	  animate			: true,
 	  updateHash		: false,
 	  transitionIn		:'slideDown',
@@ -107,7 +126,7 @@
 	  animationSpeed	:600,
 	  tabs				:".tmenu",
 	  tabActiveClass	:'active',
-	});
+	}); */
 
 	
 	// Hover menu effect
